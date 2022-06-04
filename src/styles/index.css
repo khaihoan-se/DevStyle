@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  /* transform: translate(); */
+}
+
+.banner__overlay--down {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 10%,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 1)
+  );
+}
+
+
+.banner__overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bg--gradient {
+  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+}
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/* Input */
+.label__grounp {
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+}
+.input__grounp:focus ~ .label__grounp,
+.input__grounp:not(:placeholder-shown).input__grounp:not(:focus) ~ .label__grounp {
+  top: -0.5rem;
+  font-size: 0.8rem;
+  left: 0.8rem;
+}
+/* Button */
+.button__aff {
+  transition: all .5s;
+}
+.button__aff:hover::after {
+  transform: translateX(270px);
+  transition: all .5s;
+}
+.button__aff:hover::before {
+  transform: translateX(-270px);
+  transition: all .5s;
+}
+.button__aff:not(:hover)::after {
+  transform: translateX(0);
+  transition: all .5s;
+}
+.button__aff:not(:hover)::before {
+  transform: translateX(0);
+  transition: all .5s;
+}
+.button__aff::after {
+  content: '';
+  width: 30px;
+  height: 10px;
+  background-color: #fff;
+  position: absolute;
+  display: inline-block;
+  top: -4px;
+  left: 10px;
+}
+.button__aff::before {
+  content: '';
+  width: 30px;
+  height: 10px;
+  background-color: #fff;
+  position: absolute;
+  display: inline-block;
+  bottom: -5px;
+  right: 10px;
+}

@@ -8,7 +8,7 @@ const Input: React.FC<InputProps> = ({ InputFor, label }) => {
     return (
         <div className="relative md:w-80 w-full">
             <input 
-                className="input__grounp w-full h-full border-[1px] border-black rounded-md outline-none p-[10px] text-sm" 
+                className="input__grounp w-full h-full border-[1px] border-black rounded-md outline-none p-[10px] text-sm bg-white" 
                 type="text" id={InputFor}
                 placeholder=" "
             />

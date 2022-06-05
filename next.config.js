@@ -5,6 +5,7 @@ module.exports = withPWA({
   images: {
     domains: [
       "instagram.fsgn2-6.fna.fbcdn.net",
+      "res.cloudinary.com",
     ],
   },
   pwa: {

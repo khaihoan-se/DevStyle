@@ -14,7 +14,7 @@ const transition = { duration: 0.4, ease: [ 0.43, 0.13, 0.23, 0.96 ]}
 
 const LoginPage: NextPage = () => {
     return (
-        <div className="bg--gradient relative text-black">
+        <div className="bg--gradient relative text-black overflow-hidden">
             {/* Button Back Home */}
             <motion.div
                 initial={{left: '3rem', opacity: 0 }}
@@ -33,9 +33,9 @@ const LoginPage: NextPage = () => {
             </motion.div>
             {/* Form */}
             <motion.div
-                initial={{ scale: .5 }}
+                initial={{ scale: 0.5 }}
                 animate={{ scale: 1 }}
-                exit={{ scale: .5 }}
+                exit={{ scale: 0.5 }}
                 transition={transition}
                 className="md:h-[65vh] h-[100vh] w-full m-0 p-0 flex items-center justify-center"
             >

@@ -8,18 +8,14 @@ interface ButtonProps {
     RightIcon?: React.ComponentType<{ className: string }>;
     iconClassName?: any;
 }
-const Button: React.FC<ButtonProps> = ({
-    className,
-    children,
-    onClick,
-    LeftIcon,
-    RightIcon,
-    iconClassName
-}) => {
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+    (props, ref) => {
+        const { className, children, onClick, LeftIcon, RightIcon, iconClassName } = props;
     return (
         <button 
             className={className}
             onClick={onClick}
+            ref={ref}
         >
             {LeftIcon && <LeftIcon className={iconClassName} />}
             {children}
@@ -27,5 +23,5 @@ const Button: React.FC<ButtonProps> = ({
         </button>
     );
 }
-
+)
 export default Button;

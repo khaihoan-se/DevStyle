@@ -17,11 +17,21 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+input:-webkit-autofill{
+  -webkit-text-fill-color: #000 !important;
+}
 * {
   box-sizing: border-box;
 }
-
+.bg__rgba {
+  background-color: rgba(255, 255, 255, 0.6);
+}
 .banner__overlay--down {
   background-image: linear-gradient(
     to bottom,
@@ -44,6 +54,7 @@ a {
 
 .bg--gradient {
   background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+  background-image: url('/banner-01.jpeg');
 }
 
 .parallax > use {

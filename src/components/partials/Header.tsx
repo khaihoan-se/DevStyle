@@ -8,10 +8,8 @@ import { TbShoppingCart } from "react-icons/tb";
 import { useTheme } from 'next-themes'
 import { RiMoonCloudyLine, RiSunCloudyLine } from "react-icons/ri";
 import { motion } from 'framer-motion';
-// import { BsCloudSun } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
-// RiMoonCloudyLine
-// BsCloudSun
 const transition = { duration: 0.4, ease: [ 0.43, 0.13, 0.23, 0.96 ]}
 
 const MENU_LIST = [
@@ -21,6 +19,11 @@ const MENU_LIST = [
 ]
 
 const Header = () => {
+   const auth = useSelector((state: any) => state.auth);
+   // console.log(auth);
+
+   const { user, isLogged } = auth;
+
    const { systemTheme, theme, setTheme } = useTheme();
 
    const [ mounted, setMounted ] = useState<boolean>(false);
@@ -104,16 +107,19 @@ const Header = () => {
             <div className="md:mr-8 mr-4 relative">
                <Link href='/card'>
                   <>
-                  <Button
-                     className="w-10 h-10 flex items-center justify-center border-[1px] border-black dark:border-white rounded-full outline-none"
-                  >
-                     <TbShoppingCart className="text-xl" />
-                  </Button>
-                  <span className="w-6 h-6 bg-black dark:bg-white dark:text-black text-white rounded-full flex items-center justify-center absolute top-[-10px] right-[-10px] text-xs">5</span>
+                     <Button
+                        className="w-10 h-10 flex items-center justify-center border-[1px] border-black dark:border-white rounded-full outline-none"
+                     >
+                        <TbShoppingCart className="text-xl" />
+                     </Button>
+                     <span className="w-6 h-6 bg-black dark:bg-white dark:text-black text-white rounded-full flex items-center justify-center absolute top-[-10px] right-[-10px] text-xs">5</span>
                   </>
                </Link>
             </div>
-            <div className="md:mr-8 mr-4">
+            <div className="md:mr-8 mr-4 w-10 h-10 rounded-lg flex items-center justify-center border border-black dark:border-white cursor-pointer overflow-hidden">
+               {renderThemeChanger()}
+            </div>
+            <div>
                <Link href='/login'>
                   <Button 
                      className="button__aff--home md:min-w-[100px] min-w-[70px] border-[1px] border-black dark:border-white rounded-md outline-none px-4 py-2 text-sm flex items-center justify-center relative dark:after:bg-black dark:before:bg-black"
@@ -121,9 +127,6 @@ const Header = () => {
                      Login
                   </Button>
                </Link>
-            </div>
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center border border-black dark:border-white cursor-pointer overflow-hidden">
-               {renderThemeChanger()}
             </div>
          </div>
       </header>

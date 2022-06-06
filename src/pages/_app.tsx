@@ -2,14 +2,19 @@ import '../styles/index.css'
 import type { AppProps } from 'next/app'
 import BaseLayout from '@/components/layouts/BaseLayout'
 import { ThemeProvider } from 'next-themes'
+import { Provider } from "react-redux";
+import store from "@/redux";
+
 
 function MyApp({ Component, pageProps }: AppProps) {
    return (
-      <ThemeProvider enableSystem={true} attribute="class">
-         <BaseLayout>
-            <Component {...pageProps} />
-         </BaseLayout>
-      </ThemeProvider>
+      <Provider store={store}>
+         <ThemeProvider enableSystem={true} attribute="class">
+            <BaseLayout>
+               <Component {...pageProps} />
+            </BaseLayout>
+         </ThemeProvider>
+      </Provider>
    )
 }
 

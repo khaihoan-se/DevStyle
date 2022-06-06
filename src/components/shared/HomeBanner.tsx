@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef, useCallback } from "react";
+import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from '@/components/shared/Image';
 
@@ -48,7 +48,9 @@ const HomeBanner: React.FC = () => {
                         🌟 🌟 🌟 🌟 🌟
                     </div>
                     <div className="prose !max-w-full mt-2 text-lg md:text-xl text-gray-200 md:line-clamp-5 font-fredoka">
-                        Here I create illustrations, videos and music. I like cute and mysterious things. 🎉🎉🎉
+                        Here I share UI/UX and create illustrations, videos and music. I like cute and mysterious things. 🎉🎉🎉
+                        <br></br>
+                        And this is where I review my knowledge. 🍉🍑🍇
                     </div>
                 </motion.div>
 

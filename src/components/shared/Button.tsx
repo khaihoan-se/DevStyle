@@ -11,17 +11,20 @@ interface ButtonProps {
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     (props, ref) => {
         const { className, children, onClick, LeftIcon, RightIcon, iconClassName } = props;
-    return (
-        <button 
-            className={className}
-            onClick={onClick}
-            ref={ref}
-        >
-            {LeftIcon && <LeftIcon className={iconClassName} />}
-            {children}
-            {RightIcon && <RightIcon className={iconClassName} />}
-        </button>
-    );
-}
+        return (
+            <button 
+                className={className}
+                onClick={onClick}
+                ref={ref}
+            >
+                {LeftIcon && <LeftIcon className={iconClassName} />}
+                {children}
+                {RightIcon && <RightIcon className={iconClassName} />}
+            </button>
+        );
+    }
 )
+
+Button.displayName = 'Button';
+
 export default Button;

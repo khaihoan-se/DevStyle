@@ -13,7 +13,7 @@ const transition = [0.33, 1, 0.68, 1];
 const HomeBanner: React.FC = () => { 
     return (
         <React.Fragment>
-            <div className="group relative w-full h-[450px] overflow-hidden bg-white rounded-xl">
+            <div data-scroll data-scroll-speed="2" className="group relative w-full h-[450px] overflow-hidden bg-white rounded-xl">
                 <AnimatePresence>
                     <motion.div
                         variants={bannerVariants}
@@ -41,13 +41,27 @@ const HomeBanner: React.FC = () => {
                     className="absolute left-12 top-1/2 -translate-y-1/2 md:w-[45%] w-[80%]"
                     transition={{ ease: transition, duration: 1 }}
                 >
-                    <h1 className="text-2xl font-bold uppercase md:text-4xl line-clamp-2 sm:line-clamp-3 md:line-clamp-4 text-white font-fredoka">
+                    <h1 data-scroll
+                        data-scroll-direction="horizontal"
+                        data-scroll-speed="-1" 
+                        className="text-2xl font-bold uppercase md:text-4xl line-clamp-2 sm:line-clamp-3 md:line-clamp-4 text-white font-fredoka"
+                    >
                         Welcome to the world of <br></br> Ai Amu
                     </h1>
-                    <div className="flex flex-wrap items-center mt-4 text-2xl gap-x-8">
+                    <div
+                        data-scroll
+                        data-scroll-direction="horizontal"
+                        data-scroll-speed="-1"  
+                        className="flex flex-wrap items-center mt-4 text-2xl gap-x-8"
+                    >
                         🌟 🌟 🌟 🌟 🌟
                     </div>
-                    <div className="prose !max-w-full mt-2 text-lg md:text-xl text-gray-200 md:line-clamp-5 font-fredoka">
+                    <div
+                        data-scroll
+                        data-scroll-direction="horizontal"
+                        data-scroll-speed="-1"  
+                        className="prose !max-w-full mt-2 text-lg md:text-xl text-gray-200 md:line-clamp-5 font-fredoka"
+                    >
                         Here I share UI/UX and create illustrations, videos and music. I like cute and mysterious things. 🎉🎉🎉
                         <br></br>
                         And this is where I review my knowledge. 🍉🍑🍇

@@ -15,7 +15,6 @@ import { useRouter } from "next/router";
 import { dispatchLogin } from "@/redux/actions/authAction";
 import { useDispatch } from "react-redux";
 
-
 const transition = { duration: 0.4, ease: [ 0.43, 0.13, 0.23, 0.96 ]}
 
 const initialState = {
@@ -43,18 +42,20 @@ const LoginPage: NextPage = () => {
         try {
             const res: any = await LoginApi.login({ email, password });
             setUser({...user, err: '', success: res.msg });
+            // console.log(res.msg);
+            console.log(res);
             
             localStorage.setItem('firstLogin', true)
             dispatch(dispatchLogin());
             router.push('/')
-        } catch (error: any) {
-            error.msg && 
-            setUser({...user, err: error.msg, success: '' })
+        } catch (error: any) {            
+            error.response.data.msg && 
+            setUser({...user, err: error.response.data.msg, success: '' })
         }
     }
 
     return (
-        <div className="bg--gradient relative text-black overflow-hidden">
+        <div className="bg--gradient relative text-black overflow-hidden min-h-[100vh]">
             {/* Button Back Home */}
             <motion.div
                 initial={{left: '3rem', opacity: 0 }}

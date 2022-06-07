@@ -5,6 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 @import "./nprogress.css";
+@import "./locomotive-scroll.css";
 
 html,
 body {
@@ -75,6 +76,7 @@ input:-webkit-autofill{
 .parallax > use:nth-child(4) {
   animation-delay: -5s;
   animation-duration: 20s;
+  height: 100%;
 }
 @keyframes move-forever {
   0% {

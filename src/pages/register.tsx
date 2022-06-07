@@ -50,8 +50,8 @@ const RegisterPage: NextPage = () => {
             setUser({...user, err: '', success: res.msg });
 
         } catch (error: any) {
-            error.msg && 
-            setUser({...user, err: error.msg, success: '' })
+            error.response.data.msg && 
+            setUser({...user, err: error.response.data.msg, success: '' })
         }
     }
 

@@ -220,3 +220,44 @@ input:-webkit-autofill{
     opacity: 1;
   }
 }
+/* Slider Banner */
+
+.slick-list {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.slick-track {
+  height: 100%;
+  position: relative;
+}
+.slick-initialized .slick-slide {
+  position: relative;
+}
+.slick-arrow::before {
+  display: none;
+}
+.slick-arrow {
+  top: initial !important;
+  bottom: 0;
+  right: 0 !important;
+  left: initial !important;
+  z-index: 900;
+  color: initial !important;
+  background: initial !important;
+  background-color: rgba(255,255,255,.8) !important;
+  width: 35px !important;
+  height: 35px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px !important;
+  border-radius: 50%;
+}
+.slick-arrow.slick-prev {
+  right: 80px !important;
+  /* transform: rotate(); */
+}
+.slick-arrow.slick-next {
+  right: 30px !important;
+}

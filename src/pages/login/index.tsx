@@ -42,9 +42,6 @@ const LoginPage: NextPage = () => {
         try {
             const res: any = await LoginApi.login({ email, password });
             setUser({...user, err: '', success: res.msg });
-            // console.log(res.msg);
-            console.log(res);
-            
             localStorage.setItem('firstLogin', true)
             dispatch(dispatchLogin());
             router.push('/')
@@ -104,6 +101,13 @@ const LoginPage: NextPage = () => {
                                 <p className="text-sm text-gray-700">Do not have an account 
                                     <Link href='/register'>
                                         <span className="text-[#0652DD] ml-[3px] cursor-pointer underline">register</span>
+                                    </Link>
+                                </p>
+                            </div>
+                            <div className="md:w-80 w-full">
+                                <p>
+                                    <Link href='/login/identify'>
+                                        <span className="text-[#0652DD] text-xs cursor-pointer underline">Forgot password?</span>
                                     </Link>
                                 </p>
                             </div>

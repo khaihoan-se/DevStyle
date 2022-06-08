@@ -1,18 +1,19 @@
 import { NextPage } from "next";
-import { motion } from 'framer-motion';
-import Link from "next/link";
 import HomeBanner from "@/components/shared/HomeBanner";
-import EmailContact from "@/components/features/home/EmailContact";
+import Wecome from "@/components/features/home/Wecome";
+import React from "react";
 
 
 const HomePage: NextPage = () => {
    return (
-      <div className="px-4 md:px-12">
-         {/* HomeBanner */}
-         <HomeBanner />
-         {/* Email */}
-         <EmailContact />
-      </div>
+      <React.Fragment>
+         <div className="px-4 md:px-12">
+            {/* HomeBanner */}
+            <HomeBanner />
+            {/* Email */}
+            <Wecome />
+         </div>
+      </React.Fragment>
    )
 }
 

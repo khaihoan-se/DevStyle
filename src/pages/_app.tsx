@@ -5,6 +5,8 @@ import { ThemeProvider } from 'next-themes'
 import { Provider } from "react-redux";
 import store from "@/redux";
 import axios from 'axios';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 axios.defaults.baseURL = 'http://localhost:5000';
 axios.defaults.withCredentials = true;

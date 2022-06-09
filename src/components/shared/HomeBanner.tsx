@@ -1,15 +1,6 @@
 import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import Image from '@/components/shared/Image';
+import { motion } from "framer-motion";
 import BannerSlider from "./BannerSlider";
-
-const bannerVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    exit: { opacity: 0 },
-};
-  
-const transition = [0.33, 1, 0.68, 1];
   
 const HomeBanner: React.FC = () => { 
     return (

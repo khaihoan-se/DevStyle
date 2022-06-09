@@ -30,8 +30,8 @@ const BannerSlider = () => {
         <div className="w-full h-full">
             <Slider {...settings} className="w-full h-full">
                 {
-                    BANNER.map((baner) => (
-                        <>
+                    BANNER.map((baner, index) => (
+                        <React.Fragment key={index}>
                         <AnimatePresence>
                             <motion.div
                                 variants={bannerVariants}
@@ -85,14 +85,13 @@ const BannerSlider = () => {
                         </motion.div>
 
                         <div className="absolute bottom-0 w-full h-16 banner__overlay--down text-white"></div>
-                        </>
+                        </React.Fragment>
                     ))
                 }
             </Slider>
         </div>
     );
 }
-
 interface SampleNextArrowProps {
     className?: string;
     onClick?: () => void;

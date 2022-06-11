@@ -76,11 +76,21 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({
       >
       <AnimatePresence>
          <main data-scroll-container ref={containerRef} className="overflow-hidden">
-            { router.pathname === '/login' || router.pathname === '/register' || router.pathname === '/user/activate/[params]' ? null : <Header /> }
+            {  router.pathname === '/login' || 
+               router.pathname === '/register' || 
+               router.pathname === '/user/activate/[params]' ||
+               router.pathname === '/login/identify'
+               ? null : <Header /> 
+            }
 
             <div className="app">{children}</div>
 
-            { router.pathname === '/login' || router.pathname === '/register' || router.pathname === '/user/activate/[params]' ? null : <Footer /> }
+            {  router.pathname === '/login' || 
+               router.pathname === '/register' || 
+               router.pathname === '/user/activate/[params]' ||
+               router.pathname === '/login/identify'
+               ? null : <Footer /> 
+            }
          </main>
       </AnimatePresence>
       </LocomotiveScrollProvider>
